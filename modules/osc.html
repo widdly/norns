@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>norns/docs</title>
+    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>norns</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/controlspec.html">controlspec</a></li>
+  <li><a href="../modules/encoders.html">encoders</a></li>
+  <li><a href="../modules/engine.html">engine</a></li>
+  <li><a href="../modules/grid.html">grid</a></li>
+  <li><a href="../modules/hid.html">hid</a></li>
+  <li><a href="../modules/log.html">log</a></li>
+  <li><a href="../modules/menu.html">menu</a></li>
+  <li><a href="../modules/metro.html">metro</a></li>
+  <li><a href="../modules/midi.html">midi</a></li>
+  <li><a href="../modules/norns.html">norns</a></li>
+  <li><strong>osc</strong></li>
+  <li><a href="../modules/control.html">control</a></li>
+  <li><a href="../modules/file.html">file</a></li>
+  <li><a href="../modules/number.html">number</a></li>
+  <li><a href="../modules/option.html">option</a></li>
+  <li><a href="../modules/separator.html">separator</a></li>
+  <li><a href="../modules/taper.html">taper</a></li>
+  <li><a href="../modules/trigger.html">trigger</a></li>
+  <li><a href="../modules/paramset.html">paramset</a></li>
+  <li><a href="../modules/poll.html">poll</a></li>
+  <li><a href="../modules/screen.html">screen</a></li>
+  <li><a href="../modules/script.html">script</a></li>
+  <li><a href="../modules/state.html">state</a></li>
+  <li><a href="../modules/tabutil.html">tabutil</a></li>
+  <li><a href="../modules/textentry.html">textentry</a></li>
+  <li><a href="../modules/update.html">update</a></li>
+  <li><a href="../modules/util.html">util</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>osc</code></h1>
+<p>osc device</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#event">event (from, path, args)</a></td>
+	<td class="summary">static callback when an osc event is received
+ user scripts can redefine</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#send">send (to, path, args)</a></td>
+	<td class="summary">static method to send osc event</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#send_crone">send_crone (path, args)</a></td>
+	<td class="summary">static method to send osc event directly to sclang</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#norns.osc.event">norns.osc.event (path, args, from)</a></td>
+	<td class="summary">handle an osc event</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "event"></a>
+    <strong>event (from, path, args)</strong>
+    </dt>
+    <dd>
+    static callback when an osc event is received
+ user scripts can redefine
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">from</span>
+         : a {host, port} table with the source address
+        </li>
+        <li><span class="parameter">path</span>
+         : osc message path
+        </li>
+        <li><span class="parameter">args</span>
+         : osc message args
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "send"></a>
+    <strong>send (to, path, args)</strong>
+    </dt>
+    <dd>
+    static method to send osc event
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">to</span>
+         : a {host, port} table with the destination address
+        </li>
+        <li><span class="parameter">path</span>
+         : osc message path
+        </li>
+        <li><span class="parameter">args</span>
+         : osc message args
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "send_crone"></a>
+    <strong>send_crone (path, args)</strong>
+    </dt>
+    <dd>
+    static method to send osc event directly to sclang
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+         : osc message path
+        </li>
+        <li><span class="parameter">args</span>
+         : osc message args
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "norns.osc.event"></a>
+    <strong>norns.osc.event (path, args, from)</strong>
+    </dt>
+    <dd>
+    handle an osc event
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+
+        </li>
+        <li><span class="parameter">args</span>
+
+        </li>
+        <li><span class="parameter">from</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2018-10-09 16:22:23 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>norns/docs</title>
+    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>norns</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Global_Functions">Global Functions </a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/controlspec.html">controlspec</a></li>
+  <li><a href="../modules/encoders.html">encoders</a></li>
+  <li><a href="../modules/engine.html">engine</a></li>
+  <li><a href="../modules/grid.html">grid</a></li>
+  <li><a href="../modules/hid.html">hid</a></li>
+  <li><a href="../modules/log.html">log</a></li>
+  <li><a href="../modules/menu.html">menu</a></li>
+  <li><strong>metro</strong></li>
+  <li><a href="../modules/midi.html">midi</a></li>
+  <li><a href="../modules/norns.html">norns</a></li>
+  <li><a href="../modules/osc.html">osc</a></li>
+  <li><a href="../modules/control.html">control</a></li>
+  <li><a href="../modules/file.html">file</a></li>
+  <li><a href="../modules/number.html">number</a></li>
+  <li><a href="../modules/option.html">option</a></li>
+  <li><a href="../modules/separator.html">separator</a></li>
+  <li><a href="../modules/taper.html">taper</a></li>
+  <li><a href="../modules/trigger.html">trigger</a></li>
+  <li><a href="../modules/paramset.html">paramset</a></li>
+  <li><a href="../modules/poll.html">poll</a></li>
+  <li><a href="../modules/screen.html">screen</a></li>
+  <li><a href="../modules/script.html">script</a></li>
+  <li><a href="../modules/state.html">state</a></li>
+  <li><a href="../modules/tabutil.html">tabutil</a></li>
+  <li><a href="../modules/textentry.html">textentry</a></li>
+  <li><a href="../modules/update.html">update</a></li>
+  <li><a href="../modules/util.html">util</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>metro</code></h1>
+<p>high-resolution metro API</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Metro.alloc">Metro.alloc (cb, time, count)</a></td>
+	<td class="summary">assign
+ "allocate" a metro (assigns unused id)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Metro.new">Metro.new (id)</a></td>
+	<td class="summary">constructor;</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Metro:init">Metro:init ()</a></td>
+	<td class="summary">reset to default state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Metro:start">Metro:start (time, count, stage)</a></td>
+	<td class="summary">start a metro</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Metro:stop">Metro:stop ()</a></td>
+	<td class="summary">stop a metro</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Metro.__index">Metro.__index (self, idx)</a></td>
+	<td class="summary">class custom .__index;
+ [] accessor returns one of the static metro objects</td>
+	</tr>
+</table>
+<h2><a href="#Global_Functions">Global Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#norns.metro">norns.metro (idx, stage)</a></td>
+	<td class="summary">callback on metro tick from C;</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Metro.alloc"></a>
+    <strong>Metro.alloc (cb, time, count)</strong>
+    </dt>
+    <dd>
+    assign
+ "allocate" a metro (assigns unused id)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cb</span>
+
+        </li>
+        <li><span class="parameter">time</span>
+
+        </li>
+        <li><span class="parameter">count</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Metro.new"></a>
+    <strong>Metro.new (id)</strong>
+    </dt>
+    <dd>
+    constructor;
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+         : identifier (integer)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Metro:init"></a>
+    <strong>Metro:init ()</strong>
+    </dt>
+    <dd>
+    reset to default state
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Metro:start"></a>
+    <strong>Metro:start (time, count, stage)</strong>
+    </dt>
+    <dd>
+    start a metro
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">time</span>
+         - (optional) time period between ticks (seconds.) by default, re-use the last period
+        </li>
+        <li><span class="parameter">count</span>
+         - (optional) number of ticks. infinite by default
+        </li>
+        <li><span class="parameter">stage</span>
+         - (optional) initial stage number (1-based.) 1 by default
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Metro:stop"></a>
+    <strong>Metro:stop ()</strong>
+    </dt>
+    <dd>
+    stop a metro
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Metro.__index"></a>
+    <strong>Metro.__index (self, idx)</strong>
+    </dt>
+    <dd>
+    class custom .__index;
+ [] accessor returns one of the static metro objects
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+        </li>
+        <li><span class="parameter">idx</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Global_Functions"></a>Global Functions </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "norns.metro"></a>
+    <strong>norns.metro (idx, stage)</strong>
+    </dt>
+    <dd>
+    callback on metro tick from C;
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">idx</span>
+
+        </li>
+        <li><span class="parameter">stage</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2018-10-09 16:22:23 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

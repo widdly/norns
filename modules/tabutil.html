@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>norns/docs</title>
+    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>norns</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/controlspec.html">controlspec</a></li>
+  <li><a href="../modules/encoders.html">encoders</a></li>
+  <li><a href="../modules/engine.html">engine</a></li>
+  <li><a href="../modules/grid.html">grid</a></li>
+  <li><a href="../modules/hid.html">hid</a></li>
+  <li><a href="../modules/log.html">log</a></li>
+  <li><a href="../modules/menu.html">menu</a></li>
+  <li><a href="../modules/metro.html">metro</a></li>
+  <li><a href="../modules/midi.html">midi</a></li>
+  <li><a href="../modules/norns.html">norns</a></li>
+  <li><a href="../modules/osc.html">osc</a></li>
+  <li><a href="../modules/control.html">control</a></li>
+  <li><a href="../modules/file.html">file</a></li>
+  <li><a href="../modules/number.html">number</a></li>
+  <li><a href="../modules/option.html">option</a></li>
+  <li><a href="../modules/separator.html">separator</a></li>
+  <li><a href="../modules/taper.html">taper</a></li>
+  <li><a href="../modules/trigger.html">trigger</a></li>
+  <li><a href="../modules/paramset.html">paramset</a></li>
+  <li><a href="../modules/poll.html">poll</a></li>
+  <li><a href="../modules/screen.html">screen</a></li>
+  <li><a href="../modules/script.html">script</a></li>
+  <li><a href="../modules/state.html">state</a></li>
+  <li><strong>tabutil</strong></li>
+  <li><a href="../modules/textentry.html">textentry</a></li>
+  <li><a href="../modules/update.html">update</a></li>
+  <li><a href="../modules/util.html">util</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>tabutil</code></h1>
+<p>table utility</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#tab.print">tab.print (t)</a></td>
+	<td class="summary">print the contents of a table</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tab.sort">tab.sort (t)</a></td>
+	<td class="summary">return a lexigraphically sorted array of keys for a table</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tab.count">tab.count (t)</a></td>
+	<td class="summary">count the number of entries in a table;
+ unlike table.getn() or #table, nil entries won't break the loop</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tab.contains">tab.contains (t, e)</a></td>
+	<td class="summary">search table for element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tab.key">tab.key (t, e)</a></td>
+	<td class="summary">search table for element, return key</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tab.lines">tab.lines (str)</a></td>
+	<td class="summary">split multi-line string into table of strings</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tab.save">tab.save (tbl, filename)</a></td>
+	<td class="summary">Save a table to disk.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tab.load">tab.load (sfile)</a></td>
+	<td class="summary">Load a table that has been saved via the tab.save() function.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "tab.print"></a>
+    <strong>tab.print (t)</strong>
+    </dt>
+    <dd>
+    print the contents of a table
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         table to print
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tab.sort"></a>
+    <strong>tab.sort (t)</strong>
+    </dt>
+    <dd>
+    return a lexigraphically sorted array of keys for a table
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         table to sort
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        sorted table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tab.count"></a>
+    <strong>tab.count (t)</strong>
+    </dt>
+    <dd>
+    count the number of entries in a table;
+ unlike table.getn() or #table, nil entries won't break the loop
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         table to count
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        count
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tab.contains"></a>
+    <strong>tab.contains (t, e)</strong>
+    </dt>
+    <dd>
+    search table for element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         table to check
+        </li>
+        <li><span class="parameter">e</span>
+         element to look for
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        t/f is element is present
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tab.key"></a>
+    <strong>tab.key (t, e)</strong>
+    </dt>
+    <dd>
+    search table for element, return key
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         table to check
+        </li>
+        <li><span class="parameter">e</span>
+         element to look for
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        key, nil if not found
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tab.lines"></a>
+    <strong>tab.lines (str)</strong>
+    </dt>
+    <dd>
+    split multi-line string into table of strings
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+         string with line breaks
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table with entries for each line
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tab.save"></a>
+    <strong>tab.save (tbl, filename)</strong>
+    </dt>
+    <dd>
+    Save a table to disk.
+ Saves tables, numbers, booleans and strings.
+ Inside table references are saved.
+ Does not save userdata, metatables, functions and indices of these.
+ Based on http://lua-users.org/wiki/SaveTableToFile by ChillCode.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tbl</span>
+         Table to save.
+        </li>
+        <li><span class="parameter">filename</span>
+         Location to save to.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        On failure, returns an error msg.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tab.load"></a>
+    <strong>tab.load (sfile)</strong>
+    </dt>
+    <dd>
+    Load a table that has been saved via the tab.save() function.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sfile</span>
+         Filename or stringtable to load.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        On success, returns a previously saved table. On failure, returns as second argument an error msg.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2018-10-09 16:22:23 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
