@@ -41,31 +41,25 @@
   <li><a href="../modules/arc.html">arc</a></li>
   <li><a href="../modules/audio.html">audio</a></li>
   <li><a href="../modules/controlspec.html">controlspec</a></li>
-  <li><a href="../modules/encoders.html">encoders</a></li>
   <li><a href="../modules/engine.html">engine</a></li>
   <li><strong>grid</strong></li>
   <li><a href="../modules/hid.html">hid</a></li>
-  <li><a href="../modules/log.html">log</a></li>
-  <li><a href="../modules/menu.html">menu</a></li>
   <li><a href="../modules/metro.html">metro</a></li>
   <li><a href="../modules/midi.html">midi</a></li>
-  <li><a href="../modules/norns.html">norns</a></li>
   <li><a href="../modules/osc.html">osc</a></li>
   <li><a href="../modules/control.html">control</a></li>
-  <li><a href="../modules/file.html">file</a></li>
-  <li><a href="../modules/number.html">number</a></li>
-  <li><a href="../modules/option.html">option</a></li>
-  <li><a href="../modules/separator.html">separator</a></li>
-  <li><a href="../modules/taper.html">taper</a></li>
-  <li><a href="../modules/trigger.html">trigger</a></li>
   <li><a href="../modules/paramset.html">paramset</a></li>
   <li><a href="../modules/poll.html">poll</a></li>
   <li><a href="../modules/screen.html">screen</a></li>
   <li><a href="../modules/script.html">script</a></li>
-  <li><a href="../modules/state.html">state</a></li>
+  <li><a href="../modules/softcut.html">softcut</a></li>
+  <li><a href="../modules/elca.html">elca</a></li>
+  <li><a href="../modules/EnvGraph.html">EnvGraph</a></li>
+  <li><a href="../modules/FilterGraph.html">FilterGraph</a></li>
+  <li><a href="../modules/Graph.html">Graph</a></li>
+  <li><a href="../modules/MusicUtil.html">MusicUtil</a></li>
   <li><a href="../modules/tabutil.html">tabutil</a></li>
-  <li><a href="../modules/textentry.html">textentry</a></li>
-  <li><a href="../modules/update.html">update</a></li>
+  <li><a href="../modules/UI.html">UI</a></li>
   <li><a href="../modules/util.html">util</a></li>
 </ul>
 
@@ -90,40 +84,36 @@
  user scripts can redefine</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#reconnect">reconnect ()</a></td>
-	<td class="summary">scan device list and grab one, redefined later</td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#remove">remove (dev)</a></td>
 	<td class="summary">static callback when any grid device is removed;
  user scripts can redefine</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#led">led (x, y, val)</a></td>
-	<td class="summary">set state of single LED on this grid device</td>
+	<td class="summary">set state of single LED on this grid device.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#all">all (val)</a></td>
-	<td class="summary">set state of all LEDs on this grid device</td>
+	<td class="summary">set state of all LEDs on this grid device.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#refresh">refresh ()</a></td>
-	<td class="summary">update any dirty quads on this grid device</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#print">print ()</a></td>
-	<td class="summary">print a description of this grid device</td>
+	<td class="summary">update any dirty quads on this grid device.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#connect">connect (n)</a></td>
-	<td class="summary">create device, returns object with handler and send</td>
+	<td class="summary">create device, returns object with handler and send.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#cleanup">cleanup ()</a></td>
-	<td class="summary">clear handlers</td>
+	<td class="summary">clear handlers.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#norns.grid.key">norns.grid.key (id, x, y, z)</a></td>
+	<td class="name" nowrap><a href="#update_devices">update_devices ()</a></td>
+	<td class="summary">update devices.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#norns.grid.key">norns.grid.key (id, x, y, s)</a></td>
 	<td class="summary">redefine global grid key input handler</td>
 	</tr>
 </table>
@@ -190,20 +180,6 @@
 
 </dd>
     <dt>
-    <a name = "reconnect"></a>
-    <strong>reconnect ()</strong>
-    </dt>
-    <dd>
-    scan device list and grab one, redefined later
-
-
-
-
-
-
-
-</dd>
-    <dt>
     <a name = "remove"></a>
     <strong>remove (dev)</strong>
     </dt>
@@ -229,7 +205,7 @@
     <strong>led (x, y, val)</strong>
     </dt>
     <dd>
-    set state of single LED on this grid device
+    set state of single LED on this grid device.
 
 
     <h3>Parameters:</h3>
@@ -258,7 +234,7 @@
     <strong>all (val)</strong>
     </dt>
     <dd>
-    set state of all LEDs on this grid device
+    set state of all LEDs on this grid device.
 
 
     <h3>Parameters:</h3>
@@ -279,21 +255,7 @@
     <strong>refresh ()</strong>
     </dt>
     <dd>
-    update any dirty quads on this grid device
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "print"></a>
-    <strong>print ()</strong>
-    </dt>
-    <dd>
-    print a description of this grid device
+    update any dirty quads on this grid device.
 
 
 
@@ -307,13 +269,14 @@
     <strong>connect (n)</strong>
     </dt>
     <dd>
-    create device, returns object with handler and send
+    create device, returns object with handler and send.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">n</span>
-
+            <span class="types"><span class="type">integer</span></span>
+         : vport index
         </li>
     </ul>
 
@@ -327,7 +290,21 @@
     <strong>cleanup ()</strong>
     </dt>
     <dd>
-    clear handlers
+    clear handlers.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "update_devices"></a>
+    <strong>update_devices ()</strong>
+    </dt>
+    <dd>
+    update devices.
 
 
 
@@ -338,7 +315,7 @@
 </dd>
     <dt>
     <a name = "norns.grid.key"></a>
-    <strong>norns.grid.key (id, x, y, z)</strong>
+    <strong>norns.grid.key (id, x, y, s)</strong>
     </dt>
     <dd>
     redefine global grid key input handler
@@ -355,7 +332,7 @@
         <li><span class="parameter">y</span>
 
         </li>
-        <li><span class="parameter">z</span>
+        <li><span class="parameter">s</span>
 
         </li>
     </ul>
@@ -372,7 +349,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-10 23:46:50 </i>
+<i style="float:right;">Last updated 2019-04-05 17:54:46 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

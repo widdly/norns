@@ -41,31 +41,25 @@
   <li><a href="../modules/arc.html">arc</a></li>
   <li><a href="../modules/audio.html">audio</a></li>
   <li><a href="../modules/controlspec.html">controlspec</a></li>
-  <li><a href="../modules/encoders.html">encoders</a></li>
   <li><a href="../modules/engine.html">engine</a></li>
   <li><a href="../modules/grid.html">grid</a></li>
   <li><a href="../modules/hid.html">hid</a></li>
-  <li><a href="../modules/log.html">log</a></li>
-  <li><a href="../modules/menu.html">menu</a></li>
   <li><a href="../modules/metro.html">metro</a></li>
   <li><a href="../modules/midi.html">midi</a></li>
-  <li><a href="../modules/norns.html">norns</a></li>
   <li><a href="../modules/osc.html">osc</a></li>
   <li><a href="../modules/control.html">control</a></li>
-  <li><a href="../modules/file.html">file</a></li>
-  <li><a href="../modules/number.html">number</a></li>
-  <li><a href="../modules/option.html">option</a></li>
-  <li><a href="../modules/separator.html">separator</a></li>
-  <li><a href="../modules/taper.html">taper</a></li>
-  <li><a href="../modules/trigger.html">trigger</a></li>
   <li><a href="../modules/paramset.html">paramset</a></li>
   <li><a href="../modules/poll.html">poll</a></li>
   <li><a href="../modules/screen.html">screen</a></li>
   <li><a href="../modules/script.html">script</a></li>
-  <li><a href="../modules/state.html">state</a></li>
+  <li><a href="../modules/softcut.html">softcut</a></li>
+  <li><a href="../modules/elca.html">elca</a></li>
+  <li><a href="../modules/EnvGraph.html">EnvGraph</a></li>
+  <li><a href="../modules/FilterGraph.html">FilterGraph</a></li>
+  <li><a href="../modules/Graph.html">Graph</a></li>
+  <li><a href="../modules/MusicUtil.html">MusicUtil</a></li>
   <li><a href="../modules/tabutil.html">tabutil</a></li>
-  <li><a href="../modules/textentry.html">textentry</a></li>
-  <li><a href="../modules/update.html">update</a></li>
+  <li><a href="../modules/UI.html">UI</a></li>
   <li><strong>util</strong></li>
 </ul>
 
@@ -81,24 +75,36 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
+	<td class="name" nowrap><a href="#dbamp">dbamp (db)</a></td>
+	<td class="summary">db to amp.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#time">time ()</a></td>
-	<td class="summary">get system time in s+us</td>
+	<td class="summary">get system time in s+us.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#scandir">scandir (directory)</a></td>
-	<td class="summary">scan directory, return file list</td>
+	<td class="summary">scan directory, return file list.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#file_exists">file_exists (name)</a></td>
+	<td class="summary">check if file exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#make_dir">make_dir (path)</a></td>
+	<td class="summary">make directory (with parents as needed).</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#os_capture">os_capture (cmd, raw)</a></td>
-	<td class="summary">execute os command, capture output</td>
+	<td class="summary">execute os command, capture output.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#string_starts">string_starts (s, start)</a></td>
-	<td class="summary">string begins with</td>
+	<td class="summary">string begins with.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#clamp">clamp (n, min, max)</a></td>
-	<td class="summary">clamp values to min max</td>
+	<td class="summary">clamp values to min max.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#linexp">linexp (slo, shi, dlo, dhi, f)</a></td>
@@ -106,15 +112,15 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#linlin">linlin (slo, shi, dlo, dhi, f)</a></td>
-	<td class="summary">map a linear range to another linear range</td>
+	<td class="summary">map a linear range to another linear range.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#explin">explin (slo, shi, dlo, dhi, f)</a></td>
-	<td class="summary">convert an exponential range to a linear range</td>
+	<td class="summary">convert an exponential range to a linear range.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#expexp">expexp (slo, shi, dlo, dhi, f)</a></td>
-	<td class="summary">map an exponential range to another exponential range</td>
+	<td class="summary">map an exponential range to another exponential range.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#round">round (number, quant)</a></td>
@@ -122,11 +128,11 @@
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#round_up">round_up (number, quant)</a></td>
-	<td class="summary">round up to a multiple of a number</td>
+	<td class="summary">round up to a multiple of a number.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#s_to_hms">s_to_hms (seconds)</a></td>
-	<td class="summary">format string, seconds to h:m:s</td>
+	<td class="name" nowrap><a href="#s_to_hms">s_to_hms (s)</a></td>
+	<td class="summary">format string, seconds to h:m:s.</td>
 	</tr>
 </table>
 
@@ -138,11 +144,36 @@
 
     <dl class="function">
     <dt>
+    <a name = "dbamp"></a>
+    <strong>dbamp (db)</strong>
+    </dt>
+    <dd>
+    db to amp.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">db</span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        amp
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "time"></a>
     <strong>time ()</strong>
     </dt>
     <dd>
-    get system time in s+us
+    get system time in s+us.
 
 
 
@@ -161,7 +192,7 @@
     <strong>scandir (directory)</strong>
     </dt>
     <dd>
-    scan directory, return file list
+    scan directory, return file list.
 
 
     <h3>Parameters:</h3>
@@ -177,11 +208,56 @@
 
 </dd>
     <dt>
+    <a name = "file_exists"></a>
+    <strong>file_exists (name)</strong>
+    </dt>
+    <dd>
+    check if file exists.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+         filepath
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true/false
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "make_dir"></a>
+    <strong>make_dir (path)</strong>
+    </dt>
+    <dd>
+    make directory (with parents as needed).
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "os_capture"></a>
     <strong>os_capture (cmd, raw)</strong>
     </dt>
     <dd>
-    execute os command, capture output
+    execute os command, capture output.
 
 
     <h3>Parameters:</h3>
@@ -209,7 +285,7 @@
     <strong>string_starts (s, start)</strong>
     </dt>
     <dd>
-    string begins with
+    string begins with.
 
 
     <h3>Parameters:</h3>
@@ -237,7 +313,7 @@
     <strong>clamp (n, min, max)</strong>
     </dt>
     <dd>
-    clamp values to min max
+    clamp values to min max.
 
 
     <h3>Parameters:</h3>
@@ -300,7 +376,7 @@
     <strong>linlin (slo, shi, dlo, dhi, f)</strong>
     </dt>
     <dd>
-    map a linear range to another linear range
+    map a linear range to another linear range.
 
 
     <h3>Parameters:</h3>
@@ -332,7 +408,7 @@
     <strong>explin (slo, shi, dlo, dhi, f)</strong>
     </dt>
     <dd>
-    convert an exponential range to a linear range
+    convert an exponential range to a linear range.
 
 
     <h3>Parameters:</h3>
@@ -364,7 +440,7 @@
     <strong>expexp (slo, shi, dlo, dhi, f)</strong>
     </dt>
     <dd>
-    map an exponential range to another exponential range
+    map an exponential range to another exponential range.
 
 
     <h3>Parameters:</h3>
@@ -419,7 +495,7 @@
     <strong>round_up (number, quant)</strong>
     </dt>
     <dd>
-    round up to a multiple of a number
+    round up to a multiple of a number.
 
 
     <h3>Parameters:</h3>
@@ -439,15 +515,15 @@
 </dd>
     <dt>
     <a name = "s_to_hms"></a>
-    <strong>s_to_hms (seconds)</strong>
+    <strong>s_to_hms (s)</strong>
     </dt>
     <dd>
-    format string, seconds to h:m:s
+    format string, seconds to h:m:s.
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">seconds</span>
+        <li><span class="parameter">s</span>
          seconds
         </li>
     </ul>
@@ -455,7 +531,8 @@
     <h3>Returns:</h3>
     <ol>
 
-        string seconds in h:m:s
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+        seconds : seconds in h:m:s
     </ol>
 
 
@@ -469,7 +546,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-10 23:46:50 </i>
+<i style="float:right;">Last updated 2019-04-05 17:54:46 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

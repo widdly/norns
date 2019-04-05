@@ -41,31 +41,25 @@
   <li><strong>arc</strong></li>
   <li><a href="../modules/audio.html">audio</a></li>
   <li><a href="../modules/controlspec.html">controlspec</a></li>
-  <li><a href="../modules/encoders.html">encoders</a></li>
   <li><a href="../modules/engine.html">engine</a></li>
   <li><a href="../modules/grid.html">grid</a></li>
   <li><a href="../modules/hid.html">hid</a></li>
-  <li><a href="../modules/log.html">log</a></li>
-  <li><a href="../modules/menu.html">menu</a></li>
   <li><a href="../modules/metro.html">metro</a></li>
   <li><a href="../modules/midi.html">midi</a></li>
-  <li><a href="../modules/norns.html">norns</a></li>
   <li><a href="../modules/osc.html">osc</a></li>
   <li><a href="../modules/control.html">control</a></li>
-  <li><a href="../modules/file.html">file</a></li>
-  <li><a href="../modules/number.html">number</a></li>
-  <li><a href="../modules/option.html">option</a></li>
-  <li><a href="../modules/separator.html">separator</a></li>
-  <li><a href="../modules/taper.html">taper</a></li>
-  <li><a href="../modules/trigger.html">trigger</a></li>
   <li><a href="../modules/paramset.html">paramset</a></li>
   <li><a href="../modules/poll.html">poll</a></li>
   <li><a href="../modules/screen.html">screen</a></li>
   <li><a href="../modules/script.html">script</a></li>
-  <li><a href="../modules/state.html">state</a></li>
+  <li><a href="../modules/softcut.html">softcut</a></li>
+  <li><a href="../modules/elca.html">elca</a></li>
+  <li><a href="../modules/EnvGraph.html">EnvGraph</a></li>
+  <li><a href="../modules/FilterGraph.html">FilterGraph</a></li>
+  <li><a href="../modules/Graph.html">Graph</a></li>
+  <li><a href="../modules/MusicUtil.html">MusicUtil</a></li>
   <li><a href="../modules/tabutil.html">tabutil</a></li>
-  <li><a href="../modules/textentry.html">textentry</a></li>
-  <li><a href="../modules/update.html">update</a></li>
+  <li><a href="../modules/UI.html">UI</a></li>
   <li><a href="../modules/util.html">util</a></li>
 </ul>
 
@@ -82,37 +76,32 @@
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#new">new (id, serial, name, dev)</a></td>
-	<td class="summary">constructor</td>
+	<td class="summary">constructor.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#add">add (dev)</a></td>
-	<td class="summary">static callback when any arc device is added;
- user scripts can redefine</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#reconnect">reconnect ()</a></td>
-	<td class="summary">scan device list and grab one, redefined later</td>
+	<td class="summary">static callback when any arc device is added.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#remove">remove (dev)</a></td>
-	<td class="summary">static callback when any arc device is removed;
- user scripts can redefine</td>
+	<td class="summary">static callback when any arc device is removed.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#led">led (ring, x, val)</a></td>
-	<td class="summary">set state of single LED on this arc device</td>
+	<td class="summary">set state of single LED on this arc device.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#all">all (val)</a></td>
-	<td class="summary">set state of all LEDs on this arc device</td>
+	<td class="summary">set state of all LEDs on this arc device.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#refresh">refresh ()</a></td>
-	<td class="summary">update any dirty quads on this arc device</td>
+	<td class="summary">update any dirty quads on this arc device.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#print">print ()</a></td>
-	<td class="summary">print a description of this arc device</td>
+	<td class="name" nowrap><a href="#segment">segment (ring, from, to, level)</a></td>
+	<td class="summary">create an anti-aliased point to point arc
+ segment/range on a sepcific LED ring.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#connect">connect (n)</a></td>
@@ -136,7 +125,7 @@
     <strong>new (id, serial, name, dev)</strong>
     </dt>
     <dd>
-    constructor
+    constructor.
 
 
     <h3>Parameters:</h3>
@@ -169,8 +158,8 @@
     <strong>add (dev)</strong>
     </dt>
     <dd>
-    static callback when any arc device is added;
- user scripts can redefine
+    static callback when any arc device is added.
+ user scripts can redefine.
 
 
     <h3>Parameters:</h3>
@@ -186,26 +175,12 @@
 
 </dd>
     <dt>
-    <a name = "reconnect"></a>
-    <strong>reconnect ()</strong>
-    </dt>
-    <dd>
-    scan device list and grab one, redefined later
-
-
-
-
-
-
-
-</dd>
-    <dt>
     <a name = "remove"></a>
     <strong>remove (dev)</strong>
     </dt>
     <dd>
-    static callback when any arc device is removed;
- user scripts can redefine
+    static callback when any arc device is removed.
+ user scripts can redefine.
 
 
     <h3>Parameters:</h3>
@@ -225,7 +200,7 @@
     <strong>led (ring, x, val)</strong>
     </dt>
     <dd>
-    set state of single LED on this arc device
+    set state of single LED on this arc device.
 
 
     <h3>Parameters:</h3>
@@ -254,7 +229,7 @@
     <strong>all (val)</strong>
     </dt>
     <dd>
-    set state of all LEDs on this arc device
+    set state of all LEDs on this arc device.
 
 
     <h3>Parameters:</h3>
@@ -275,7 +250,7 @@
     <strong>refresh ()</strong>
     </dt>
     <dd>
-    update any dirty quads on this arc device
+    update any dirty quads on this arc device.
 
 
 
@@ -285,13 +260,34 @@
 
 </dd>
     <dt>
-    <a name = "print"></a>
-    <strong>print ()</strong>
+    <a name = "segment"></a>
+    <strong>segment (ring, from, to, level)</strong>
     </dt>
     <dd>
-    print a description of this arc device
+    create an anti-aliased point to point arc
+ segment/range on a sepcific LED ring.
+ each point can be a decimal, LEDs will fade for in between values.
 
 
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ring</span>
+            <span class="types"><span class="type">integer</span></span>
+         : ring index (1-based)
+        </li>
+        <li><span class="parameter">from</span>
+            <span class="types"><span class="type">number</span></span>
+         : from angle in radians
+        </li>
+        <li><span class="parameter">to</span>
+            <span class="types"><span class="type">number</span></span>
+         : to angle in radians
+        </li>
+        <li><span class="parameter">level</span>
+            <span class="types"><span class="type">integer</span></span>
+         : LED brightness in [0, 15]
+        </li>
+    </ul>
 
 
 
@@ -339,7 +335,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-02-10 23:46:50 </i>
+<i style="float:right;">Last updated 2019-04-05 17:54:46 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
