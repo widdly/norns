@@ -142,36 +142,68 @@
 	<td class="summary">sync two voices</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_fc">SC.filter_fc (voice, value)</a></td>
-	<td class="summary">set filter cutoff</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_fc">SC.pre_filter_fc (voice, value)</a></td>
+	<td class="summary">set pre_filter cutoff</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_fc_mod">SC.filter_fc_mod (voice, value)</a></td>
-	<td class="summary">set filter mod</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_fc_mod">SC.pre_filter_fc_mod (voice, value)</a></td>
+	<td class="summary">set pre_filter mod</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_rq">SC.filter_rq (voice, value)</a></td>
-	<td class="summary">set filter q</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_rq">SC.pre_filter_rq (voice, value)</a></td>
+	<td class="summary">set pre_filter q</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_lp">SC.filter_lp (voice, value)</a></td>
-	<td class="summary">set filter lp</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_lp">SC.pre_filter_lp (voice, value)</a></td>
+	<td class="summary">set pre_filter lp</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_hp">SC.filter_hp (voice, value)</a></td>
-	<td class="summary">set filter hp</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_hp">SC.pre_filter_hp (voice, value)</a></td>
+	<td class="summary">set pre_filter hp</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_bp">SC.filter_bp (voice, value)</a></td>
-	<td class="summary">set filter bp</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_bp">SC.pre_filter_bp (voice, value)</a></td>
+	<td class="summary">set pre_filter bp</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_br">SC.filter_br (voice, value)</a></td>
-	<td class="summary">set filter br</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_br">SC.pre_filter_br (voice, value)</a></td>
+	<td class="summary">set pre_filter br</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#SC.filter_dry">SC.filter_dry (voice, value)</a></td>
-	<td class="summary">set filter dry</td>
+	<td class="name" nowrap><a href="#SC.pre_filter_dry">SC.pre_filter_dry (voice, value)</a></td>
+	<td class="summary">set pre_filter dry</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_fc">SC.post_filter_fc (voice, value)</a></td>
+	<td class="summary">set post_filter cutoff</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_fc_mod">SC.post_filter_fc_mod (voice, value)</a></td>
+	<td class="summary">set post_filter mod</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_rq">SC.post_filter_rq (voice, value)</a></td>
+	<td class="summary">set post_filter q</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_lp">SC.post_filter_lp (voice, value)</a></td>
+	<td class="summary">set post_filter lp</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_hp">SC.post_filter_hp (voice, value)</a></td>
+	<td class="summary">set post_filter hp</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_bp">SC.post_filter_bp (voice, value)</a></td>
+	<td class="summary">set post_filter bp</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_br">SC.post_filter_br (voice, value)</a></td>
+	<td class="summary">set post_filter br</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.post_filter_dry">SC.post_filter_dry (voice, value)</a></td>
+	<td class="summary">set post_filter dry</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#SC.level_slew_time">SC.level_slew_time (voice, value)</a></td>
@@ -240,6 +272,10 @@
 	<tr>
 	<td class="name" nowrap><a href="#SC.reset">SC.reset ()</a></td>
 	<td class="summary">reset softcut params</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SC.defaults">SC.defaults ()</a></td>
+	<td class="summary">get the default state of the softcut system</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#SC.params">SC.params ()</a></td>
@@ -641,11 +677,11 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_fc"></a>
-    <strong>SC.filter_fc (voice, value)</strong>
+    <a name = "SC.pre_filter_fc"></a>
+    <strong>SC.pre_filter_fc (voice, value)</strong>
     </dt>
     <dd>
-    set filter cutoff
+    set pre_filter cutoff
 
 
     <h3>Parameters:</h3>
@@ -664,11 +700,11 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_fc_mod"></a>
-    <strong>SC.filter_fc_mod (voice, value)</strong>
+    <a name = "SC.pre_filter_fc_mod"></a>
+    <strong>SC.pre_filter_fc_mod (voice, value)</strong>
     </dt>
     <dd>
-    set filter mod
+    set pre_filter mod
 
 
     <h3>Parameters:</h3>
@@ -687,11 +723,11 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_rq"></a>
-    <strong>SC.filter_rq (voice, value)</strong>
+    <a name = "SC.pre_filter_rq"></a>
+    <strong>SC.pre_filter_rq (voice, value)</strong>
     </dt>
     <dd>
-    set filter q
+    set pre_filter q
 
 
     <h3>Parameters:</h3>
@@ -710,11 +746,11 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_lp"></a>
-    <strong>SC.filter_lp (voice, value)</strong>
+    <a name = "SC.pre_filter_lp"></a>
+    <strong>SC.pre_filter_lp (voice, value)</strong>
     </dt>
     <dd>
-    set filter lp
+    set pre_filter lp
 
 
     <h3>Parameters:</h3>
@@ -733,11 +769,11 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_hp"></a>
-    <strong>SC.filter_hp (voice, value)</strong>
+    <a name = "SC.pre_filter_hp"></a>
+    <strong>SC.pre_filter_hp (voice, value)</strong>
     </dt>
     <dd>
-    set filter hp
+    set pre_filter hp
 
 
     <h3>Parameters:</h3>
@@ -756,11 +792,11 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_bp"></a>
-    <strong>SC.filter_bp (voice, value)</strong>
+    <a name = "SC.pre_filter_bp"></a>
+    <strong>SC.pre_filter_bp (voice, value)</strong>
     </dt>
     <dd>
-    set filter bp
+    set pre_filter bp
 
 
     <h3>Parameters:</h3>
@@ -779,11 +815,11 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_br"></a>
-    <strong>SC.filter_br (voice, value)</strong>
+    <a name = "SC.pre_filter_br"></a>
+    <strong>SC.pre_filter_br (voice, value)</strong>
     </dt>
     <dd>
-    set filter br
+    set pre_filter br
 
 
     <h3>Parameters:</h3>
@@ -802,11 +838,195 @@
 
 </dd>
     <dt>
-    <a name = "SC.filter_dry"></a>
-    <strong>SC.filter_dry (voice, value)</strong>
+    <a name = "SC.pre_filter_dry"></a>
+    <strong>SC.pre_filter_dry (voice, value)</strong>
     </dt>
     <dd>
-    set filter dry
+    set pre_filter dry
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_fc"></a>
+    <strong>SC.post_filter_fc (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter cutoff
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_fc_mod"></a>
+    <strong>SC.post_filter_fc_mod (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter mod
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_rq"></a>
+    <strong>SC.post_filter_rq (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter q
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_lp"></a>
+    <strong>SC.post_filter_lp (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter lp
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_hp"></a>
+    <strong>SC.post_filter_hp (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter hp
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_bp"></a>
+    <strong>SC.post_filter_bp (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter bp
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_br"></a>
+    <strong>SC.post_filter_br (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter br
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">voice</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SC.post_filter_dry"></a>
+    <strong>SC.post_filter_dry (voice, value)</strong>
+    </dt>
+    <dd>
+    set post_filter dry
 
 
     <h3>Parameters:</h3>
@@ -1206,6 +1426,25 @@
 
 </dd>
     <dt>
+    <a name = "SC.defaults"></a>
+    <strong>SC.defaults ()</strong>
+    </dt>
+    <dd>
+    get the default state of the softcut system
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table of parameter states for each voice
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "SC.params"></a>
     <strong>SC.params ()</strong>
     </dt>
@@ -1233,7 +1472,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-11 18:55:28 </i>
+<i style="float:right;">Last updated 2019-07-11 21:17:09 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
