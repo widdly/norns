@@ -40,15 +40,15 @@
 <ul class="nowrap">
   <li><a href="../modules/arc.html">arc</a></li>
   <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/clock.html">clock</a></li>
   <li><a href="../modules/controlspec.html">controlspec</a></li>
-  <li><a href="../modules/encoders.html">encoders</a></li>
   <li><a href="../modules/engine.html">engine</a></li>
   <li><a href="../modules/grid.html">grid</a></li>
-  <li><a href="../modules/hid.html">hid</a></li>
+  <li><strong>hid</strong></li>
   <li><a href="../modules/metro.html">metro</a></li>
   <li><a href="../modules/midi.html">midi</a></li>
   <li><a href="../modules/osc.html">osc</a></li>
-  <li><strong>control</strong></li>
+  <li><a href="../modules/control.html">control</a></li>
   <li><a href="../modules/paramset.html">paramset</a></li>
   <li><a href="../modules/poll.html">poll</a></li>
   <li><a href="../modules/screen.html">screen</a></li>
@@ -68,48 +68,34 @@
 
 <div id="content">
 
-<h1>Module <code>control</code></h1>
-<p>Control class</p>
+<h1>Module <code>hid</code></h1>
+<p>Hid class</p>
 <p></p>
 
 
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#Control.new">Control.new (id, name, controlspec, formatter)</a></td>
-	<td class="summary">constructor.</td>
+	<td class="name" nowrap><a href="#new">new (id, name, types, codes, dev)</a></td>
+	<td class="summary">constructor</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Control:get">Control:get ()</a></td>
-	<td class="summary">get.</td>
+	<td class="name" nowrap><a href="#add">add (dev)</a></td>
+	<td class="summary">static callback when any hid device is added;
+ user scripts can redefine</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Control:get_raw">Control:get_raw ()</a></td>
-	<td class="summary">get_raw.</td>
+	<td class="name" nowrap><a href="#remove">remove (dev)</a></td>
+	<td class="summary">static callback when any hid device is removed;
+ user scripts can redefine</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Control:set">Control:set (value)</a></td>
-	<td class="summary">set.</td>
+	<td class="name" nowrap><a href="#connect">connect (n)</a></td>
+	<td class="summary">create device, returns object with handler and send</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Control:set_raw">Control:set_raw (value)</a></td>
-	<td class="summary">set_raw.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Control:delta">Control:delta (d)</a></td>
-	<td class="summary">delta.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Control:set_default">Control:set_default ()</a></td>
-	<td class="summary">set_default.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Control:bang">Control:bang ()</a></td>
-	<td class="summary">bang.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Control:string">Control:string ()</a></td>
-	<td class="summary">string.</td>
+	<td class="name" nowrap><a href="#cleanup">cleanup ()</a></td>
+	<td class="summary">clear handlers</td>
 	</tr>
 </table>
 
@@ -121,26 +107,34 @@
 
     <dl class="function">
     <dt>
-    <a name = "Control.new"></a>
-    <strong>Control.new (id, name, controlspec, formatter)</strong>
+    <a name = "new"></a>
+    <strong>new (id, name, types, codes, dev)</strong>
     </dt>
     <dd>
-    constructor.
+    constructor
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">id</span>
-
+            <span class="types"><span class="type">integer</span></span>
+         : arbitrary numeric identifier
         </li>
         <li><span class="parameter">name</span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         : name
         </li>
-        <li><span class="parameter">controlspec</span>
-
+        <li><span class="parameter">types</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         : array of supported event types. keys are type codes, values are strings
         </li>
-        <li><span class="parameter">formatter</span>
-
+        <li><span class="parameter">codes</span>
+            <span class="types"><span class="type">userdata</span></span>
+         : array of supported codes. each entry is a table of codes of a given type. subtables are indexed by supported code numbers; values are code names
+        </li>
+        <li><span class="parameter">dev</span>
+            <span class="types"><span class="type">userdata</span></span>
+         : opaque pointer to device
         </li>
     </ul>
 
@@ -150,48 +144,18 @@
 
 </dd>
     <dt>
-    <a name = "Control:get"></a>
-    <strong>Control:get ()</strong>
+    <a name = "add"></a>
+    <strong>add (dev)</strong>
     </dt>
     <dd>
-    get.
- returns mapped value.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Control:get_raw"></a>
-    <strong>Control:get_raw ()</strong>
-    </dt>
-    <dd>
-    get_raw.
- get 0-1.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Control:set"></a>
-    <strong>Control:set (value)</strong>
-    </dt>
-    <dd>
-    set.
- accepts a mapped value
+    static callback when any hid device is added;
+ user scripts can redefine
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">value</span>
-
+        <li><span class="parameter">dev</span>
+         : a Hid table
         </li>
     </ul>
 
@@ -201,18 +165,18 @@
 
 </dd>
     <dt>
-    <a name = "Control:set_raw"></a>
-    <strong>Control:set_raw (value)</strong>
+    <a name = "remove"></a>
+    <strong>remove (dev)</strong>
     </dt>
     <dd>
-    set_raw.
- set 0-1.
+    static callback when any hid device is removed;
+ user scripts can redefine
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">value</span>
-
+        <li><span class="parameter">dev</span>
+         : a Hid table
         </li>
     </ul>
 
@@ -222,18 +186,16 @@
 
 </dd>
     <dt>
-    <a name = "Control:delta"></a>
-    <strong>Control:delta (d)</strong>
+    <a name = "connect"></a>
+    <strong>connect (n)</strong>
     </dt>
     <dd>
-    delta.
- add delta to current value. checks controlspec for mapped vs not.
- default division of delta for 100 steps range.
+    create device, returns object with handler and send
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">d</span>
+        <li><span class="parameter">n</span>
 
         </li>
     </ul>
@@ -244,47 +206,14 @@
 
 </dd>
     <dt>
-    <a name = "Control:set_default"></a>
-    <strong>Control:set_default ()</strong>
+    <a name = "cleanup"></a>
+    <strong>cleanup ()</strong>
     </dt>
     <dd>
-    set_default.
+    clear handlers
 
 
 
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Control:bang"></a>
-    <strong>Control:bang ()</strong>
-    </dt>
-    <dd>
-    bang.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Control:string"></a>
-    <strong>Control:string ()</strong>
-    </dt>
-    <dd>
-    string.
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-        formatted string
-    </ol>
 
 
 
@@ -297,7 +226,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-04-04 20:07:57 </i>
+<i style="float:right;">Last updated 2019-10-10 23:49:41 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
